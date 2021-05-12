@@ -1,0 +1,23 @@
+{
+  "commerceApp": {
+    "typeDeProduit": {
+      "home": {
+        "title": "Type De Produits",
+        "createLabel": "Create a new Type De Produit",
+        "createOrEditLabel": "Create or edit a Type De Produit",
+        "notFound": "No Type De Produits found"
+      },
+      "created": "A new Type De Produit is created with identifier {{ param }}",
+      "updated": "A Type De Produit is updated with identifier {{ param }}",
+      "deleted": "A Type De Produit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Type De Produit {{ id }}?"
+      },
+      "detail": {
+        "title": "Type De Produit"
+      },
+      "type": "Type",
+      "produits": "Produits"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+
+
+
+
+entity Client {
+    telephone String required
+}
+
+entity Adresse {
+	numero String,
+    rue String required,
+    codePostal String required,
+    ville String required
+}
+
+entity Produit {
+	nom String required,
+    prix Double required,
+    description String required
+}
+
+entity TypeDeProduit {
+	type String required
+}
+
+entity Commande {
+    date LocalDate,
+    moyentPaiement String,
+    statutCommande String,
+    total Double
+}
+
+entity ProduitCommande {
+	quantite Integer required
+}
+
+relationship OneToOne {
+    Client{user required} to User{client}
+    Client{adresse required} to Adresse{client required}
+}
+
+relationship OneToMany {
+    TypeDeProduit{produits} to Produit{type required},
+    Client{commandes} to Commande{client required},
+    Commande{panier required} to ProduitCommande{commande required}
+}
+
+relationship ManyToOne {
+    ProduitCommande{produit required} to Produit
+}
+
+service all with serviceImpl
+dto * with mapstruct
+paginate Produit with pagination
